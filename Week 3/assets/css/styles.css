@@ -1,0 +1,131 @@
+:root{
+    /* Background Colors*/
+    --color-bg-primary:#171b31;
+    --color-bg-secondary:rgba(228, 228, 231,0.85);
+    --color-bg-tertiary: #0f194d;
+    --color-bg-hover:#323974;
+
+    /*Text Colors (High Contrast)*/
+    --color-text-primary: #0a0e1a;
+    --color-text-secondary: #0a212c;
+
+    /*Quiz Feedback*/
+    --color-correct: #63feb6;
+    --color-error:#fe7171;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "poppins", sans-serif;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    margin: 0;
+    background: var(--color-bg-primary);
+    background-image: url("../img/animation.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+.app{
+    position: relative;
+    background:var(--color-bg-secondary);
+    width: 90%;
+    max-width: 700px;
+    min-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 2px 1px 8px #333;
+}
+
+.st-img{
+    display: inline-block;
+    position: absolute;
+    max-width: 130px;
+    top:-20px;
+    right:18px;
+}
+
+.app:has(.st-img:hover) {
+  background: url("../img/animation.gif") center / cover no-repeat;
+}
+.app:has(.st-img:hover) #nav-bar > h1,
+.app:has(.st-img:hover) #nav-bar > h3,
+.app:has(.st-img:hover) #question {
+  color: #fff;
+}
+
+#nav-bar{
+    display: flex;
+    justify-content: space-between;
+}
+#nav-bar h3{
+    align-self: self-end;
+}
+.app h1{
+    font-size: 30px;
+    color: var(--color-text-primary);
+    font-weight: 800;
+    padding-bottom: 30px;
+}
+
+hr{
+    border: 1px solid #001e4d;
+}
+.quiz{
+    padding: 20px 0;
+}
+.quiz h2{
+    font-size: 20px;
+    color:var(--color-text-primary);
+    font-weight: 600;
+}
+
+button{
+    font-size: 16px;
+    font-family: 'Lucida Sans',sans-serif;
+}
+.btn{
+    background: #fff;
+    color:var(--color-text-secondary);
+    font-weight: 500;
+    width: 100%;
+    border:1px solid #222;
+    padding: 10px;
+    margin: 10px auto;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn:hover:not([disabled]){
+    background: var(--color-bg-hover);
+    color: #fff;
+    transition: all 0.3s;
+}
+.btn:disabled{
+    cursor: no-drop;
+}
+
+#next-btn{
+    background: var(--color-bg-tertiary);
+    color: #fff;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin:20px auto 0;
+    border-radius: 4px;
+    cursor:pointer;
+    display: block;
+}
+
+.correct{
+    background: var(--color-correct);
+}
+.incorrect{
+    background: var(--color-error);
+}
